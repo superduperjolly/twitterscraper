@@ -1,12 +1,7 @@
 """A set of functions to gather and clean twitter data."""
 import tweepy
 
-from config import (
-    CONSUMER_KEY,
-    CONSUMER_SECRET,
-    ACCESS_TOKEN,
-    ACCESS_TOKEN_SECRET
-)
+from config import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 
 
 # Authenticate the package
@@ -22,10 +17,10 @@ def get_tweets_by_user(username):
     pass
 
 
-def get_tweets_on_timeline():
+def get_tweets_on_timeline(since_id, count):
     """Gets tweets in my timeline"""
-    public_tweets = api.home_timeline()
-
+    public_tweets = api.home_timeline(since_id=since_id, count=count)
+    return public_tweets
 
 
 def get_tweets_in_area(coordinates):
@@ -39,6 +34,6 @@ def get_tweets_in_area(coordinates):
     pass
 
 
-def steam_tweets_now(coordinates):
+def stream_tweets_now(coordinates):
     """Gets tweets being published at the moment."""
     pass

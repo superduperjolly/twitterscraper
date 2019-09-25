@@ -22,6 +22,12 @@ def get_tweets_by_user(username):
     pass
 
 
+def get_tweets_on_timeline():
+    """Gets tweets in my timeline"""
+    public_tweets = api.home_timeline()
+
+
+
 def get_tweets_in_area(coordinates):
     """Gets tweets in an area. Take note that twitter allows
     'boxing' an area for retrieving tweets. Meaning it's expecting
@@ -30,4 +36,9 @@ def get_tweets_in_area(coordinates):
     :param: coordinates
     :dtype: list
     :return:"""
+    pass
+
+
+def steam_tweets_now(coordinates):
+    """Gets tweets being published at the moment."""
     pass

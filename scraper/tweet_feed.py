@@ -19,10 +19,10 @@ def get_tweets_by_user(username):
     pass
 
 
-def get_tweets_on_timeline(since_id, count):
+def get_tweets_on_timeline(count=100):
     """Gets tweets in my timeline"""
-    public_tweets = api.home_timeline(since_id=since_id, count=count)
-    return public_tweets
+    tweets = tweepy.Cursor(api.home_timeline).items(count)
+    return list(tweets)
 
 
 def get_tweets_in_area_now(

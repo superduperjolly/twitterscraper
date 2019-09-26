@@ -40,7 +40,9 @@ def get_tweets_in_area_now(
     stream = tweepy.Stream(auth=api.auth, listener=listener)
 
     try:
-        print("Streaming tweets in location %s and saving to %s" % (coordinates, filepath))
+        print(
+            "Streaming tweets in location %s and saving to %s" % (coordinates, filepath)
+        )
         stream.sample(locations=coordinates)
     except KeyboardInterrupt:
         print("Streaming stopped.")

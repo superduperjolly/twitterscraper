@@ -11,6 +11,7 @@ ACCESS_TOKEN_SECRET = "0jrSuHO5PV9CNjrdw9q3QE7IVCsogofBKWOCGuQEkn2Vm"
 
 
 class StreamListener(tweepy.StreamListener):
+
     def on_data(self, data):
         tweet = json.loads(data)
         # print('@%s: %s in: %s' % (tweet['user']['screen_name'], tweet['text'].encode('ascii', 'ignore'), tweet['place']))
@@ -41,17 +42,17 @@ class StreamListener(tweepy.StreamListener):
             )
         )
 
-        # created_at
-        # id
-        # text
-        # source
-        # user
-        # geo
-        # place
-        # reply_count
-        # retweet_count
-        # favorite_count
-        # lang
+    # created_at
+    # id
+    # text
+    # source
+    # user
+    # geo
+    # place
+    # reply_count
+    # retweet_count
+    # favorite_count
+    # lang
 
     def on_error(self, status):
         print(status)

@@ -43,7 +43,7 @@ def get_tweets_in_area_now(
         print(
             "Streaming tweets in location %s and saving to %s" % (coordinates, filepath)
         )
-        stream.sample(locations=coordinates)
+        stream.filter(locations=coordinates)
     except KeyboardInterrupt:
         print("Streaming stopped.")
     finally:
